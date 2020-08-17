@@ -1,0 +1,46 @@
+.shop {
+	display: inline-block;
+	width: 900px;
+	vertical-align: top;
+
+}
+
+.body {
+	background-color: lightgrey;
+	width: 99%;
+	border-radius: 10px;
+	box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.45);
+}
+
+
+
+
+.shop-item {
+	background-color: lightgrey;
+	width: 400px;
+	display: inline-block;
+	border-radius: 10px;
+	padding: 5px;
+	box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.45);
+}
+
+.shop-item2 {
+	background-color: lightgrey;
+	width: 100%;
+	display: inline-block;
+	border-radius: 10px;
+	padding: 5px;
+	box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.45);
+}
+
+body{
+ 	
+}
+
+img {
+	width: 100%;
+	max-height: 700px;
+	height: auto;
+	border-radius: 10px;
+	box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.75);
+}

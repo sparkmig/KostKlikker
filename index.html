@@ -1,0 +1,126 @@
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body class="body">
+		<div style="text-align: center">
+			<div class="shop">
+				<div >
+					<div >
+						<h1>Din mor Clicker</h1>
+						<label>v. 0.1</label>
+					</div>
+					<div>
+						<p>Antal Mødre i sec: <label id = "antalKosteSec" ></label></p>
+						<p>Antal Mødre: <label id = "antalKoste" ></label></p>
+					</div>
+				</div>
+				<div>
+					<img onclick="kostKlik()" id ="Billede" src="http://sarahtornoe.dk/wp-content/uploads/2019/12/Sarah_Da-min-mor-forlod-mig_1-1024x874.jpg" / >
+				</div>
+			</div>
+			<div class="shop">
+				<div id ="shop">
+					<h1>SHOP</h1>
+					<div onclick="Lone()" class="shop-item" id ="LoneShop">
+						<h2>Lone<h2>
+						</div>
+				</div>
+			</div>
+		</div>
+		<script> 
+			//Start variabler
+			var antalKoste = 0;
+			var antalKosteSec = 0;
+			var lone = 2;
+			var birgitte = 10;
+			var støvsuger = 100;
+			var currentUpgrade = 0;
+
+
+
+			//opgraderinger
+			function Lone() {
+				if (antalKoste >= 100) {
+					antalKoste -= 100
+					document.getElementById('Billede').src = "http://www.skoleogliv.dk/wp-content/uploads/2018/04/thumb_IMG_7674_1024.jpg";
+					document.getElementById('LoneShop').parentNode.removeChild(document.getElementById('LoneShop'))
+					addElement("Birgitte", "Birgitte()")
+					antalKosteSec = lone;
+					currentUpgrade = lone/10;
+
+				}else {
+					alert("Ikke nok Boomers")
+				}
+
+			}
+
+			function Birgitte() {
+				if (antalKoste >= 300) {
+					antalKoste -= 300
+					document.getElementById('Billede').src = "https://kvindetid.dk/wp-content/uploads/2016/04/Birgitte-Baadegaard-baadegaard.dk_.jpg";
+					document.getElementById('LoneShop').parentNode.removeChild(document.getElementById('LoneShop'))
+					antalKosteSec = birgitte;
+					currentUpgrade = birgitte/10;
+					addElement("Støvsuger", "Støvsuger()")
+
+				}else {
+					alert("Ikke nok Boomers")
+				}
+
+			}
+
+			function Støvsuger() {
+				if (antalKoste >= 1000) {
+					antalKoste -= 1000
+					document.getElementById('Billede').src = "https://thumb-p6.xhcdn.com/a/27W7nyv6ceLjqxHrjiAS-w/000/356/287/786_1000.gif";
+					document.getElementById('LoneShop').parentNode.removeChild(document.getElementById('LoneShop'))
+					addElement("Kommer Snart", "kommersnart()")
+					antalKosteSec = støvsuger;
+					currentUpgrade = støvsuger/10;
+
+				} else {
+					alert("Ikke nok Boomers")
+				}
+
+			}
+
+			function kommersnart() {
+				alert("UNDER UDVIKLING")
+			}
+
+
+			//Opdatere alle labels
+			setInterval(opdaterLabels, 100)
+
+			function opdaterLabels() {
+				document.getElementById('antalKoste').innerHTML = parseInt(antalKoste);
+				document.getElementById('antalKosteSec').innerHTML = parseInt(antalKosteSec);
+				antalKoste += currentUpgrade;
+
+			}
+
+			function kostKlik() {
+				antalKoste++;
+			}
+
+
+
+
+
+
+			function addElement(navn, fnavn) {
+			    // Adds an element to the document
+			    var p = document.getElementById('shop');
+			    var newElement = document.createElement("h2");
+			    newElement.setAttribute('onclick', fnavn);
+			    newElement.setAttribute('class', "shop-item")
+			    newElement.setAttribute('id', "LoneShop")
+			    newElement.innerHTML = navn;
+			    p.appendChild(newElement);
+			}
+
+		</script>
+		</body>
+</html>
